@@ -6,9 +6,9 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind = 1)
 knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
-library(leaflet)
 ```
 
 ## **Introduction**
@@ -44,7 +44,7 @@ It is evident that the rate for black is significantly larger than other race, a
 there is a significant change in rate for Latin around 2005 whereas the rate for others stayed constant. 
 ```{r chart 1, echo = FALSE}
 source("../source/analysis.R")
-plot(chart_one)
+chart_one
 ```
 
 ## **Variable Comparison Chart**
@@ -57,7 +57,9 @@ plot(chart_two)
 ```
 
 ## **Map**
-_Description_:
+_Description_: The map shows the prison admission count for black across the U.S. Looking at the map,
+we are able to see which part of the US has the most, and least black prisoners. The darker the color is, the higher
+the count is for the black prison admission count. 
 ```{r map, echo = FALSE}
-
+map
 ```

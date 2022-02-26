@@ -1,7 +1,6 @@
 library(ggplot2)
 library(tidyverse)
-library(leaflet)
-library(maps)
+library(usdata)
 
 incarceration_trends <- read.csv(
   "https://raw.githubusercontent.com/vera-institute/incarceration-trends/master/incarceration_trends.csv", stringsAsFactors = FALSE)
@@ -101,6 +100,7 @@ black_adm_count <- incarceration_trends %>%
 
 state_shape <- map_data("state") %>%
   rename(state = region) %>%
+  mutate(state = state2abbr(state)) %>%
   left_join(black_adm_count, by = "state")
 
 blank_theme <- theme_bw() +
@@ -126,5 +126,5 @@ map <- ggplot(state_shape) +
   labs(title = "Total Prison Admission of Black",
        fill = "Black Prison Admission Count") + 
   blank_theme
-
 map
+
