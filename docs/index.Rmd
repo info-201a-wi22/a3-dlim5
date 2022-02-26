@@ -1,0 +1,63 @@
+---
+title: "Assignment 3"
+author: "Jason Lim"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(leaflet)
+```
+
+## **Introduction**
+In today's society, where the topic of racial disparity is often overlooked, many
+racial and ethnic minorities are faced with challenges given by the country's flawed
+criminal justice system. It is a widely known fact that people of color tend to
+receive a longer sentence than white Americans and are also easily convicted, which
+has left a tremendous fear to those people of color today. From this assignment, 
+I hope to address such prevalent issue by creating multiple visualizations that 
+display patterns of racial inequality existing in the prison system. The variables 
+I'm choosing to analyze are geography, admission rate to both jail and prison,
+and further investigate the demographics to observe if there's any patterns that infer
+racial discrimination of the incarceration system. 
+
+## **5 Values Relevant To The Topic**
+Using the data frame from Vera Institute, I found some key values that will help me
+visualize better for my analysis.
+
+* In 2016, the average prison admission rate for Asian is 19%, 1106% for black, 247% for Latinx,
+530% for Native, and 335% for white.
+* In 2016, the average jail population rate for Asian is 580%, 2527% for black, 1038% for Latinx,
+1341% for Native, and 476% for white.
+* Top five states with the highest black prison admission count are Illinois, California, 
+Texas, New York, Maryland respectively. 
+* In 2018, the total black jail population was 247547, and the total white jail population
+was 346061.
+* In 2018, the total black population was 28834577, and the total white population was 128996635.
+
+## **Trends Over Time Chart**
+_Description_: This stacked bar chart shows the average prison admission rate for each race over time from 2000 and 2018. 
+By having a stacked bar chart, we can observe how the rate of each race change over time with clear visuals. 
+It is evident that the rate for black is significantly larger than other race, and another thing to note is that
+there is a significant change in rate for Latin around 2005 whereas the rate for others stayed constant. 
+```{r chart 1, echo = FALSE}
+source("../source/analysis.R")
+plot(chart_one)
+```
+
+## **Variable Comparison Chart**
+_Description_: For the comparison part, I used bar chart to compare the ratio of population of jail 
+to total population for black and white. This gives clear visualization that the ratio for black outweigh
+the ratio of white by almost 3 times. Though it doesn't directly infer the prevalence of racial discrimination
+in criminal justice system, this is something to be looked into. 
+```{r chart 2, echo = FALSE}
+plot(chart_two)
+```
+
+## **Map**
+_Description_:
+```{r map, echo = FALSE}
+
+```
